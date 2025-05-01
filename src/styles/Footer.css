@@ -1,0 +1,84 @@
+.footer {
+  background-color: #062343;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-btn {
+  padding: 10px 20px;
+  background-color: #2c83aa;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer-btn:hover {
+  background-color: #aaa;
+  color: #062343;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  margin: 10px;
+  color: #4fc3f7;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #aaa;
+}
+
+.footer .copyright {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* ميديا كويري للموبايلات */
+@media (max-width: 600px) {
+  .footer h2 {
+    font-size: 24px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .social-links a {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  background-color: #332a224e;
+}
+/* loading  */
+.loader {
+  border: 8px solid #f3f3f3; /* لون الخلفية */
+  border-top: 8px solid #3498db; /* لون الدوران */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto; /* توسيط */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* loading */
+.landingSection {
+  background: url(./assets/mosqe-with-ai.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.landingSection .clock {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.3); /* أسود شفاف */
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.landingSection .container {
+  max-width: 850px;
+  width: 100%;
+  background: #332a224e;
+  padding: 30px 25px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid #d7d7d74e;
+  margin: 0 auto;
+}
+
+.landingSection .container .top_sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d7d7d74e;
+}
+.landingSection .container .top_sec .infoCard {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.landingSection .container .top_sec h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+.landingSection .container .top_sec h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+.landingSection .container .top_sec select {
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  background: #d7d7d74e;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  border: none;
+}
+.landingSection .container .top_sec select option {
+  background: #332a224e;
+  color: #062343;
+  font-weight: bold;
+  font-size: 18px;
+}
+.landingSection .container .top_sec select:hover {
+  cursor: pointer;
+}
+.landingSection .prayer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px 25px;
+  background: #013763;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 5px;
+  border: 1px solid #d7d7d74e;
+  font-weight: bold;
+}
+.azkar-wrapper {
+  padding: 50px;
+  border-radius: 12px;
+  direction: rtl;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 80px;
+}
+.azkar-wrapper h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.azkar-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.azkar-wrapper li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border-right: 4px solid #007b83;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.azkar-wrapper li p {
+  margin: 5px 0;
+  line-height: 1.8;
+  color: #333;
+  font-size: 20px;
+}
+.azkar-wrapper li p strong {
+  color: #007b83;
+}
+.azkar-wrapper li p span {
+  color: #666;
+  font-size: 16px;
+}
+.azkar-icon,
+.radio-icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px 15px -5px 5px;
+  object-fit: contain;
+}
+/* إضافة تنسيق للموبايل */
+
+@media (min-width: 768px) {
+  .landingSection .container .top_sec .citySelect {
+    height: 120px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .landingSection .container {
+    margin: 50px 15px 20px 15px; /* يقلل المسافة من الجناب */
+    padding: 20px 15px;
+  }
+  .landingSection .container .top_sec {
+    display: grid; /* أهم تعديل */
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 20px;
+    justify-items: center; /* عشان العناصر تتوسط */
+  }
+  .landingSection .container .top_sec .infoCard {
+    width: 100%; /* كل كارد ياخد المساحة المتوفرة */
+    text-align: center;
+  }
+  .landingSection .container .top_sec .hijridate {
+    height: 85px;
+    padding-top: 30px;
+  }
+  .landingSection .container .top_sec .hejry {
+    display: none;
+  }
+  .landingSection .container .top_sec .time {
+    display: none;
+  }
+  .landingSection .container .top_sec select {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+  .landingSection .container .top_sec h3 {
+    font-size: 20px;
+    display: none;
+  }
+  .landingSection .container .top_sec h4,
+  .landingSection .container .top_sec h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .landingSection .container .top_sec {
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+  }
+}
+@media (max-width: 863px) {
+  .landingSection .container .top_sec .time {
+    display: none;
+  }
+}
+/* Animation */
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+}
