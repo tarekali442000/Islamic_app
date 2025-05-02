@@ -86,17 +86,26 @@
   background-color: #062343;
   position: absolute;
   top: 80px;
-  right: 20px;
+  right: 0;
+  left: 0;
   padding: 20px 30px;
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   z-index: 999;
-  min-width: 200px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.showMenu .navLink {
+  width: 100%;
+  padding: 10px 5px;
 }
 
 /* Dropdown */
 .dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .dropdownToggle {
@@ -110,43 +119,91 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-.dropdownToggle:hover {
-  color: #a99d9d;
-}
-.dropdownMenu {
-  display: none;
-  flex-direction: column;
-  background-color: #062343;
+  position: relative;
+  padding: 6px 12px;
   border-radius: 8px;
-  padding: 10px;
-  position: absolute;
-  top: 30px;
-  right: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.dropdown:hover .dropdownMenu {
-  display: flex;
-  gap: 8px;
-}
-.dropdownMenu .navLink:hover {
-  background-color: #aaa;
-  color: #062343;
-  border-radius: 8px;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* responsive design */
+.dropdownToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
 
-/* الموبايل - أقل من 768px */
+.dropdownMenu {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+}
+
+.dropdown:hover .dropdownMenu,
+.dropdownOpen {
+  display: flex;
+  gap: 12px;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* We now make the dropdown toggle act as a proper button with hover/focus states */
+.dropdownToggle:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdownMenu .navLink {
+  color: #062343;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-align: right;
+  width: 100%;
+}
+
+.dropdownMenu .navLink:hover {
+  background-color: #f0f4f8;
+  color: #062343;
+  transform: translateX(-5px);
+  font-weight: bold;
+}
+
+/* Add arrow indicator for dropdown */
+.dropdownMenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+/* Mobile dropdown adjustments */
 @media (max-width: 768px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
   .navLinks {
     display: none;
     width: 100%;
   }
+  
   .menuButton {
     display: block;
   }
@@ -159,6 +216,79 @@
   .branding {
     flex: 1;
     justify-content: space-between;
+  }
+  
+  .showMenu {
+    top: 70px; /* Adjust based on your navbar height on mobile */
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+  
+  .dropdownToggle {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .dropdownMenu {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    padding: 5px 15px;
+    margin-top: 5px;
+    border-radius: 6px;
+    width: 100%;
+    display: none;
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+  }
+  
+  .dropdownMenu::before {
+    display: none;
+  }
+  
+  .dropdownMenu .navLink {
+    color: #fff;
+    padding: 8px 5px;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .dropdownMenu .navLink:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: none;
+  }
+  
+  .dropdownOpen {
+    display: flex;
+  }
+  
+  .showMenu .dropdown {
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showMenu {
+    padding: 15px 20px;
+  }
+  
+  .dropdownToggle {
+    font-size: 1rem;
+  }
+  
+  .dropdownMenu .navLink {
+    font-size: 0.95rem;
+  }
+  
+  .navLink {
+    font-size: 1rem;
   }
 }
 
