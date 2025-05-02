@@ -92,22 +92,41 @@ html {
 }
 .landingSection .container .top_sec select {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
   outline: none;
   background: #d7d7d74e;
-  padding: 8px 12px;
+  padding: 10px 12px;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
   margin-top: 5px;
   border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: left 15px top 50%;
+  background-size: 14px auto;
+  padding-left: 30px;
+  text-align: center;
 }
+
 .landingSection .container .top_sec select option {
-  background: #332a224e;
+  background: #fff;
   color: #062343;
   font-weight: bold;
   font-size: 18px;
+  padding: 10px;
 }
+
+/* Custom select dropdown for city selection */
+.citySelect {
+  position: relative;
+  z-index: 10;
+}
+
 .landingSection .container .top_sec select:hover {
   cursor: pointer;
 }
@@ -196,6 +215,10 @@ html {
     width: 100%; /* كل كارد ياخد المساحة المتوفرة */
     text-align: center;
   }
+  .landingSection .container .top_sec .citySelect {
+    grid-column: 1 / -1; /* Make city selector take full width */
+    width: 100%;
+  }
   .landingSection .container .top_sec .hijridate {
     height: 85px;
     padding-top: 30px;
@@ -209,7 +232,8 @@ html {
   .landingSection .container .top_sec select {
     width: 100%;
     font-size: 18px;
-    padding: 8px 10px;
+    padding: 10px 10px;
+    text-align: center;
   }
   .landingSection .container .top_sec h3 {
     font-size: 20px;
@@ -240,4 +264,125 @@ html {
 html,
 body {
   overflow-x: hidden;
+}
+
+/* Custom city dropdown styles */
+.custom-city-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #d7d7d74e;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  margin-top: 5px;
+  user-select: none;
+}
+
+.dropdown-arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid white;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.city-options-container {
+  position: absolute;
+  top: calc(100% - 5px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling for the city options */
+.city-options-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.city-options-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 0 8px 0;
+}
+
+.city-options-container::-webkit-scrollbar-thumb {
+  background: #013763;
+  border-radius: 10px;
+}
+
+.city-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-option {
+  padding: 12px 15px;
+  color: #062343;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.city-option:hover {
+  background: #f0f4f8;
+}
+
+.city-option.selected {
+  background: #e6eff8;
+}
+
+/* Mobile adjustments for city dropdown */
+@media (max-width: 768px) {
+  .citySelect {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    grid-column: 1 / -1; /* Make city selector take full width */
+  }
+  
+  .city-options-container {
+    max-height: 250px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-city-select {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+  
+  .city-option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Fix for very small screens */
+  .city-options-container {
+    max-height: 200px;
+    position: fixed;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+    margin-top: 5px;
+  }
 }
