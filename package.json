@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://tarekali442000.github.io/islamic_app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
