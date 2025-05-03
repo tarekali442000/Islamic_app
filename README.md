@@ -17,7 +17,8 @@ Large Screen :
 
 
 
-![image](https://github.com/user-attachments/assets/57600d89-702a-45cc-a338-9e06345839d2)
+![image](https://github.com/user-attachments/assets/6ad75c38-8b95-4706-81dc-fa6904fad7e4)
+
 
 
 
