@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/HadithList.css";
+import hadithIcon from "../assets/hadith-svgrepo-com.svg";
 
 const API_URL =
   "https://hadis-api-id.vercel.app/hadith/abu-dawud?page=2&limit=300";
@@ -47,7 +48,10 @@ const HadithList = () => {
 
   return (
     <div className="hadith-list-container">
-      <h2>أحاديث سنن أبي داود</h2>
+      <h2>
+        أحاديث سنن أبي داود
+        <img className="hadith-icon" src={hadithIcon} alt="hadith icon" />
+      </h2>
       <div className="hadiths-grid">
         {hadiths.slice(0, visibleCount).map((hadith) => (
           <div key={hadith.number} className="hadith-card">

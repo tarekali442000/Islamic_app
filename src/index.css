@@ -10,6 +10,10 @@ html {
   scroll-behavior: smooth;
   background-color: #332a224e;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 /* loading  */
 .loader {
   border: 8px solid #f3f3f3; /* لون الخلفية */
@@ -186,89 +190,12 @@ html {
   color: #666;
   font-size: 16px;
 }
-.azkar-icon,
-.radio-icon {
+.azkar-icon {
   width: 30px;
   height: 30px;
   margin: 5px 15px -5px 5px;
   object-fit: contain;
 }
-/* إضافة تنسيق للموبايل */
-
-@media (min-width: 768px) {
-  .landingSection .container .top_sec .citySelect {
-    height: 120px;
-    padding-top: 30px;
-  }
-}
-@media (max-width: 768px) {
-  .landingSection .container {
-    margin: 30px 15px 20px 15px; /* يقلل المسافة من الجناب */
-    padding: 20px 15px;
-  }
-  .landingSection .container .top_sec {
-    display: grid; /* أهم تعديل */
-    grid-template-columns: repeat(2, 1fr); /* عمودين */
-    gap: 20px;
-    justify-items: center; /* عشان العناصر تتوسط */
-  }
-  .landingSection .container .top_sec .infoCard {
-    width: 100%; /* كل كارد ياخد المساحة المتوفرة */
-    text-align: center;
-  }
-  .landingSection .container .top_sec .citySelect {
-    grid-column: 1 / -1; /* Make city selector take full width */
-    width: 100%;
-  }
-  .landingSection .container .top_sec .hijridate {
-    height: 65px;
-    padding-top: 15px;
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-  .landingSection .container .top_sec .hejry {
-    display: none;
-  }
-  .landingSection .container .top_sec .time {
-    display: none;
-  }
-  .landingSection .container .top_sec select {
-    width: 100%;
-    font-size: 18px;
-    padding: 10px 10px;
-    text-align: center;
-  }
-  .landingSection .container .top_sec h3 {
-    font-size: 20px;
-    display: none;
-  }
-  .landingSection .container .top_sec h4,
-  .landingSection .container .top_sec h2 {
-    font-size: 18px;
-  }
-}
-@media (max-width: 500px) {
-  .landingSection .container .top_sec {
-    grid-template-columns: 1fr; /* عمود واحد فقط */
-  }
-}
-@media (max-width: 863px) {
-  .landingSection .container .top_sec .time {
-    display: none;
-  }
-}
-/* Animation */
-@keyframes fadeInDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-html,
-body {
-  overflow-x: hidden;
-}
-
 /* Custom city dropdown styles */
 .custom-city-select {
   display: flex;
@@ -349,22 +276,7 @@ body {
 .city-option.selected {
   background: #e6eff8;
 }
-
-/* Mobile adjustments for city dropdown */
-@media (max-width: 768px) {
-  .citySelect {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    grid-column: 1 / -1; /* Make city selector take full width */
-  }
-
-  .city-options-container {
-    max-height: 250px;
-    border-radius: 8px;
-  }
-}
-
+/* إضافة تنسيق للموبايل */
 @media (max-width: 480px) {
   .landingSection .container {
     margin: -20px 15px 20px 15px;
@@ -393,5 +305,89 @@ body {
     transform: translateX(50%);
     width: 100%;
     z-index: 999;
+  }
+}
+@media (max-width: 500px) {
+  .landingSection .container .top_sec {
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+  }
+}
+@media (min-width: 768px) {
+  .landingSection .container .top_sec .citySelect {
+    height: 120px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .landingSection .container {
+    margin: 30px 15px 20px 15px; /* يقلل المسافة من الجناب */
+    padding: 20px 15px;
+  }
+  .landingSection .container .top_sec {
+    display: grid; /* أهم تعديل */
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 20px;
+    justify-items: center; /* عشان العناصر تتوسط */
+  }
+  .landingSection .container .top_sec .infoCard {
+    width: 100%; /* كل كارد ياخد المساحة المتوفرة */
+    text-align: center;
+  }
+  .landingSection .container .top_sec .citySelect {
+    grid-column: 1 / -1; /* Make city selector take full width */
+    width: 100%;
+  }
+  .landingSection .container .top_sec .hijridate {
+    height: 65px;
+    padding-top: 15px;
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .landingSection .container .top_sec .hejry {
+    display: none;
+  }
+  .landingSection .container .top_sec .time {
+    display: none;
+  }
+  .landingSection .container .top_sec select {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 10px;
+    text-align: center;
+  }
+  .landingSection .container .top_sec h3 {
+    font-size: 20px;
+    display: none;
+  }
+  .landingSection .container .top_sec h4,
+  .landingSection .container .top_sec h2 {
+    font-size: 18px;
+  }
+  .citySelect {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    grid-column: 1 / -1; /* Make city selector take full width */
+  }
+
+  .city-options-container {
+    max-height: 250px;
+    border-radius: 8px;
+  }
+  .azkar-wrapper {
+    padding: 25px 10px;
+  }
+}
+
+@media (max-width: 863px) {
+  .landingSection .container .top_sec .time {
+    display: none;
+  }
+}
+/* Animation */
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
