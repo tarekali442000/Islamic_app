@@ -9,7 +9,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
+.footer-title {
+  display: none;
+}
 .footer p {
   font-size: 16px;
   margin-bottom: 10px;
@@ -34,7 +36,7 @@
 }
 
 .footer-btn:hover {
-  background-color: #aaa;
+  background-color: #f0f4f8;
   color: #062343;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
@@ -55,7 +57,7 @@
 }
 
 .social-links a:hover {
-  color: #aaa;
+  color: #f0f4f8;
 }
 
 .footer .copyright {
@@ -73,10 +75,22 @@
   .footer p {
     font-size: 14px;
   }
-
-  .footer-links a {
-    font-size: 14px;
+  .footer-links {
+    display: none;
   }
+  .footer-title {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-family: "uthmanic";
+  }
+  /* .footer-links a {
+    font-size: 14px;
+  } */
 
   .social-links a {
     font-size: 20px;

@@ -60,7 +60,7 @@
 }
 
 .navLink:hover {
-  background-color: #aaa;
+  background-color: #f0f4f8;
   color: #062343;
   border-radius: 8px;
   cursor: pointer;
@@ -197,13 +197,16 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 15px;
   }
-  
+  .siteName {
+    font-size: 1.4rem;
+  }
   .navLinks {
     display: none;
     width: 100%;
   }
-  
+
   .menuButton {
     display: block;
   }
@@ -217,21 +220,22 @@
     flex: 1;
     justify-content: space-between;
   }
-  
+
   .showMenu {
     top: 70px; /* Adjust based on your navbar height on mobile */
+    /* text-align: center; */
   }
 
   .dropdown {
     width: 100%;
   }
-  
+
   .dropdownToggle {
     justify-content: flex-start;
     width: 100%;
     padding: 10px 0;
   }
-  
+
   .dropdownMenu {
     position: static;
     background-color: rgba(255, 255, 255, 0.1);
@@ -245,28 +249,28 @@
     transform: none;
     opacity: 1;
   }
-  
+
   .dropdownMenu::before {
     display: none;
   }
-  
+
   .dropdownMenu .navLink {
     color: #fff;
     padding: 8px 5px;
     width: 100%;
     text-align: right;
   }
-  
+
   .dropdownMenu .navLink:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     transform: none;
   }
-  
+
   .dropdownOpen {
     display: flex;
   }
-  
+
   .showMenu .dropdown {
     margin-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -278,15 +282,15 @@
   .showMenu {
     padding: 15px 20px;
   }
-  
+
   .dropdownToggle {
     font-size: 1rem;
   }
-  
+
   .dropdownMenu .navLink {
     font-size: 0.95rem;
   }
-  
+
   .navLink {
     font-size: 1rem;
   }

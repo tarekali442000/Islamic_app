@@ -144,10 +144,10 @@ html {
   font-weight: bold;
 }
 .azkar-wrapper {
-  padding: 50px;
+  padding: 50px 13px;
   border-radius: 12px;
   direction: rtl;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   margin-bottom: 80px;
 }
 .azkar-wrapper h2 {
@@ -176,7 +176,8 @@ html {
   margin: 5px 0;
   line-height: 1.8;
   color: #333;
-  font-size: 20px;
+  font-size: 1.4rem;
+  font-family: "hafs";
 }
 .azkar-wrapper li p strong {
   color: #007b83;
@@ -202,7 +203,7 @@ html {
 }
 @media (max-width: 768px) {
   .landingSection .container {
-    margin: 50px 15px 20px 15px; /* يقلل المسافة من الجناب */
+    margin: 30px 15px 20px 15px; /* يقلل المسافة من الجناب */
     padding: 20px 15px;
   }
   .landingSection .container .top_sec {
@@ -220,8 +221,10 @@ html {
     width: 100%;
   }
   .landingSection .container .top_sec .hijridate {
-    height: 85px;
-    padding-top: 30px;
+    height: 65px;
+    padding-top: 15px;
+    grid-column: 1 / -1;
+    width: 100%;
   }
   .landingSection .container .top_sec .hejry {
     display: none;
@@ -355,7 +358,7 @@ body {
     width: 100%;
     grid-column: 1 / -1; /* Make city selector take full width */
   }
-  
+
   .city-options-container {
     max-height: 250px;
     border-radius: 8px;
@@ -363,26 +366,32 @@ body {
 }
 
 @media (max-width: 480px) {
+  .landingSection .container {
+    margin: -20px 15px 20px 15px;
+  }
+  .landingSection .container .top_sec {
+    margin-bottom: 10px;
+  }
+  .landingSection .container .top_sec .prayer {
+    margin-bottom: 10px;
+  }
   .custom-city-select {
     padding: 8px 10px;
     font-size: 16px;
   }
-  
+
   .city-option {
     padding: 10px;
     font-size: 16px;
   }
-  
+
   /* Fix for very small screens */
   .city-options-container {
-    max-height: 200px;
-    position: fixed;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 300px;
-    margin-top: 5px;
+    position: absolute;
+    top: 100%; /* تحت الزر مباشرة */
+    right: 50%;
+    transform: translateX(50%);
+    width: 100%;
+    z-index: 999;
   }
 }

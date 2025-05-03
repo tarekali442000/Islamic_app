@@ -55,7 +55,7 @@ export const Navbar = () => {
     };
 
     const handleEscape = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setMenuOpen(false);
         setDropdownOpen(false);
       }
@@ -71,7 +71,7 @@ export const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEscape);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
@@ -89,34 +89,62 @@ export const Navbar = () => {
           <Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>
             الرئيسية
           </Link>
-          <Link to="/radio" className={styles.navLink} onClick={handleNavLinkClick}>
+          <Link
+            to="/radio"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             الراديو
           </Link>
-          <Link to="/quran" className={styles.navLink} onClick={handleNavLinkClick}>
+          <Link
+            to="/quran"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             القرآن الكريم
           </Link>
-          <Link to="/hadith" className={styles.navLink} onClick={handleNavLinkClick}>
+          <Link
+            to="/hadith"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             أحاديث
           </Link>
-          <Link to="/doaa" className={styles.navLink} onClick={handleNavLinkClick}>
+          <Link
+            to="/doaa"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             أدعية
           </Link>
 
           <div className={styles.dropdown} ref={dropdownRef}>
-            <button 
-              className={styles.dropdownToggle} 
+            <button
+              className={styles.dropdownToggle}
               onClick={toggleDropdown}
               ref={dropdownButtonRef}
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
             >
-              الأذكار {dropdownOpen ? '▲' : '▼'}
+              الأذكار {dropdownOpen ? "▲" : "▼"}
             </button>
-            <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.dropdownOpen : ''}`}>
-              <Link to="/morning" className={styles.navLink} onClick={handleNavLinkClick}>
+            <div
+              className={`${styles.dropdownMenu} ${
+                dropdownOpen ? styles.dropdownOpen : ""
+              }`}
+            >
+              <Link
+                to="/morning"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
                 الصبـــاح
               </Link>
-              <Link to="/evening" className={styles.navLink} onClick={handleNavLinkClick}>
+              <Link
+                to="/evening"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
                 المســـاء
               </Link>
             </div>
@@ -124,7 +152,11 @@ export const Navbar = () => {
         </div>
 
         <div className={styles.branding}>
-          <Link to="/" className={styles.navLinkLogo} onClick={handleNavLinkClick}>
+          <Link
+            to="/"
+            className={styles.navLinkLogo}
+            onClick={handleNavLinkClick}
+          >
             <h1 className={styles.siteName}>مواقيتي</h1>
           </Link>
           <img src={mosque} alt="شعار مواقيتي" className={styles.logo} />

@@ -6,6 +6,9 @@ function Footer({ id }) {
   return (
     <footer className="footer" id={id}>
       <div className="footer-container">
+        <h2 className="footer-title">
+          "وَذَكِّرْ فَإِنَّ الذِّكْرَى تَنْفَعُ الْمُؤْمِنِينَ"
+        </h2>
         <div className="footer-links">
           <Link to="/" className="footer-btn">
             الرئيسية
