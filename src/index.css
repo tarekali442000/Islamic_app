@@ -148,7 +148,7 @@ body {
   font-weight: bold;
 }
 .azkar-wrapper {
-  padding: 50px 13px;
+  padding: 30px 13px;
   border-radius: 12px;
   direction: rtl;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
@@ -376,6 +376,9 @@ body {
   }
   .azkar-wrapper {
     padding: 25px 10px;
+  }
+  .azkar-wrapper h2 {
+    font-size: 24px;
   }
 }
 

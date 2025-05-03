@@ -147,6 +147,34 @@ export const Navbar = () => {
               >
                 المســـاء
               </Link>
+              <Link
+                to="/estiqaz"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
+                الإستيقـاظ
+              </Link>
+              <Link
+                to="/sleep"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
+                النـــوم
+              </Link>
+              <Link
+                to="/after-salah"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
+                بعد الصلاة
+              </Link>
+              <Link
+                to="/tasbeeh"
+                className={styles.navLink}
+                onClick={handleNavLinkClick}
+              >
+                تسابيح
+              </Link>
             </div>
           </div>
         </div>
@@ -156,11 +184,12 @@ export const Navbar = () => {
             to="/"
             className={styles.navLinkLogo}
             onClick={handleNavLinkClick}
+            style={{ display: "contents" }}
           >
             <h1 className={styles.siteName}>مواقيتي</h1>
-          </Link>
-          <img src={mosque} alt="شعار مواقيتي" className={styles.logo} />
 
+            <img src={mosque} alt="شعار مواقيتي" className={styles.logo} />
+          </Link>
           {/* زرار المينيو */}
           <button
             ref={buttonRef}
