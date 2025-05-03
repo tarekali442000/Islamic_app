@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import mosque from "../assets/real_mosque_icon.png";
+import mosque from "../assets/praying.png";
 import styles from "../styles/Navbar.module.css";
 import { Link } from "react-router-dom";
 
