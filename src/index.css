@@ -67,8 +67,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #d7d7d74e;
 }
 .landingSection .container .top_sec .infoCard {
@@ -138,14 +138,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding: 5px 25px;
   background: #013763;
   color: #fff;
-  font-size: 24px;
+  font-size: 23px;
   border-radius: 5px;
   border: 1px solid #d7d7d74e;
-  font-weight: bold;
+  font-weight: 600;
 }
 .azkar-wrapper {
   padding: 30px 13px;
@@ -278,9 +278,6 @@ body {
 }
 /* إضافة تنسيق للموبايل */
 @media (max-width: 480px) {
-  .landingSection .container {
-    margin: -20px 15px 20px 15px;
-  }
   .landingSection .container .top_sec {
     margin-bottom: 10px;
   }
@@ -320,7 +317,7 @@ body {
 }
 @media (max-width: 768px) {
   .landingSection .container {
-    margin: 30px 15px 20px 15px; /* يقلل المسافة من الجناب */
+    margin: -70px 15px 20px 15px; /* يقلل المسافة من الجناب */
     padding: 20px 15px;
   }
   .landingSection .container .top_sec {
