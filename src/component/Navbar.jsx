@@ -101,14 +101,14 @@ export const Navbar = () => {
             className={styles.navLink}
             onClick={handleNavLinkClick}
           >
-            القرآن الكريم
+            المصحف
           </Link>
           <Link
             to="/hadith"
             className={styles.navLink}
             onClick={handleNavLinkClick}
           >
-            أحاديث
+            السنة
           </Link>
           <Link
             to="/doaa"

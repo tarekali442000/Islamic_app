@@ -18,10 +18,10 @@ function Footer({ id }) {
           </Link>
 
           <Link to="/quran" className="footer-btn">
-            القرآن الكريم
+            المصحف
           </Link>
           <Link to="/hadith" className="footer-btn">
-            أحاديث
+            السنة
           </Link>
           <Link to="/doaa" className="footer-btn">
             أدعية

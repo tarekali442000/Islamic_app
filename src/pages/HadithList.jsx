@@ -49,7 +49,7 @@ const HadithList = () => {
   return (
     <div className="hadith-list-container">
       <h2>
-        أحاديث سنن أبي داود
+        سنن أبي داود
         <img className="hadith-icon" src={hadithIcon} alt="hadith icon" />
       </h2>
       <div className="hadiths-grid">

@@ -87,7 +87,7 @@ const QuranPage = () => {
 
   return (
     <div className="quran-page">
-      <h2>القرآن الكريم</h2>
+      <h2>المصحف</h2>
 
       <div className="custom-select-container" ref={dropdownRef}>
         <button
@@ -96,9 +96,9 @@ const QuranPage = () => {
           aria-haspopup="listbox"
           aria-expanded={showDropdown}
         >
-          {allSurahs.find(s => s.id === selectedSurah)?.name || "اختر سورة"}
+          {allSurahs.find((s) => s.id === selectedSurah)?.name || "اختر سورة"}
         </button>
-        
+
         {showDropdown && (
           <div className="select-dropdown">
             <div className="search-container">
@@ -115,7 +115,9 @@ const QuranPage = () => {
               {filteredSurahs.map((surah) => (
                 <li
                   key={surah.id}
-                  className={`select-option ${selectedSurah === surah.id ? "selected" : ""}`}
+                  className={`select-option ${
+                    selectedSurah === surah.id ? "selected" : ""
+                  }`}
                   onClick={() => handleSurahSelect(surah.id)}
                   role="option"
                   aria-selected={selectedSurah === surah.id}
@@ -142,7 +144,7 @@ const QuranPage = () => {
                 currentIndex === 0 && (
                   <p
                     className="ayahs-text"
-                    style={{ fontWeight: "bold", fontSize: "1.7rem" }}
+                    style={{ fontWeight: "bold", fontSize: "1.8rem" }}
                   >
                     بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                   </p>
@@ -159,10 +161,19 @@ const QuranPage = () => {
       </div>
 
       <div className="pagination-buttons">
-        <button onClick={handlePrev} disabled={currentIndex === 0 && selectedSurah === 1}>
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0 && selectedSurah === 1}
+        >
           السابق
         </button>
-        <button onClick={handleNext} disabled={currentIndex + ayahsPerPage >= surahAyahs.length && selectedSurah === 114}>
+        <button
+          onClick={handleNext}
+          disabled={
+            currentIndex + ayahsPerPage >= surahAyahs.length &&
+            selectedSurah === 114
+          }
+        >
           التالي
         </button>
       </div>
