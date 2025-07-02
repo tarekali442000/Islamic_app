@@ -36,32 +36,16 @@ function Footer({ id }) {
         </div>
 
         <div className="social-links">
-          <a
-            href="mailto:tarek.ali.hamed.amr@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#" onClick={(e) => e.preventDefault()}>
             <TfiEmail />
           </a>
-          <a
-            href="https://www.linkedin.com/in/tarek-ali-652a98204/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#" onClick={(e) => e.preventDefault()}>
             <FaLinkedinIn />
           </a>
-          <a
-            href="https://github.com/tarekali442000"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#" onClick={(e) => e.preventDefault()}>
             <FaGithub />
           </a>
-          <a
-            href="https://t.me/Tracer4by4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#" onClick={(e) => e.preventDefault()}>
             <FaTelegramPlane />
           </a>
         </div>
