@@ -25,17 +25,14 @@ function App() {
   const [afterSalah, setAfterSalah] = useState([]);
   const [tasbeeh, setTasbeeh] = useState([]);
   const [doaa, setDoaa] = useState([]);
-  const [loading, setLoading] = useState(false);
   // جلب البيانات من API عند تشغيل المكون
   useEffect(() => {
     const fetchAzkar = async () => {
       try {
-        setLoading(true);
         const response = await fetch(
           "https://raw.githubusercontent.com/nawafalqari/azkar-api/56df51279ab6eb86dc2f6202c7de26c8948331c1/azkar.json"
         );
         const data = await response.json();
-        setLoading(false);
         const alsabahRaw = data["أذكار الصباح"] || [];
         const alsabahAll = Array.isArray(alsabahRaw[0])
           ? [...alsabahRaw[0], ...alsabahRaw.slice(1)]
@@ -67,8 +64,6 @@ function App() {
         setDoaa(doaaCleaned);
       } catch (error) {
         console.error("فشل تحميل الأذكار:", error);
-      } finally {
-        setLoading(false);
       }
     };
 

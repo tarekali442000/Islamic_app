@@ -25,7 +25,7 @@ const QuranPage = () => {
         setCurrentIndex(0);
         setLoading(false);
       });
-  }, []);
+  }, [selectedSurah]);
 
   useEffect(() => {
     if (allSurahs.length > 0) {
