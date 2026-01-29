@@ -50,7 +50,7 @@ function Footer({ id }) {
           </a>
         </div>
 
-        <p className="copyright">جميع الحقوق محفوظة © 2025</p>
+        <p className="copyright">جميع الحقوق محفوظة © 2026</p>
       </div>
     </footer>
   );
